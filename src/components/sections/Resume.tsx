@@ -15,7 +15,7 @@ export function ResumeTeaser() {
       </Reveal>
 
       <Reveal delay={0.05}>
-        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between rounded-2xl border border-border bg-surface p-8">
+        <div className="paper flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between rounded-2xl border border-border bg-surface p-8">
           <div>
             <p className="text-sm text-muted">
               {latest.start} — {latest.end}
@@ -29,14 +29,14 @@ export function ResumeTeaser() {
           <div className="flex shrink-0 flex-wrap gap-3">
             <a
               href="/resume"
-              className="rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-transform hover:scale-[1.03]"
+              className="border border-foreground px-6 py-3 text-sm font-medium transition-colors hover:bg-foreground hover:text-surface"
             >
               Full resume
             </a>
             <a
               href={resume.pdfUrl}
               download
-              className="rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:border-foreground"
+              className="border border-border px-6 py-3 text-sm font-medium transition-colors hover:border-foreground"
             >
               Download PDF
             </a>

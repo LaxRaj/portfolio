@@ -18,7 +18,7 @@ export function ProjectCard({ project }: { project: Project }) {
         const rect = e.currentTarget.getBoundingClientRect();
         setCursor({ x: e.clientX - rect.left, y: e.clientY - rect.top });
       }}
-      className="group relative block overflow-hidden rounded-2xl border border-border bg-surface p-8 transition-transform duration-300 ease-out hover:-translate-y-1"
+      className="paper group relative block overflow-hidden rounded-2xl border border-border bg-surface p-8 transition-transform duration-300 ease-out hover:-translate-y-1"
     >
       {hovered && (
         <motion.span
@@ -26,7 +26,7 @@ export function ProjectCard({ project }: { project: Project }) {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
           style={{ left: cursor.x, top: cursor.y }}
-          className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-foreground px-3 py-1.5 text-xs font-medium text-background hidden md:block"
+          className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-foreground px-3 py-1.5 text-xs font-medium text-surface hidden md:block"
         >
           View →
         </motion.span>

@@ -1,71 +1,56 @@
 import type { Project } from "./types";
 
-// Placeholder projects — replace with your real work whenever it's ready.
 export const projects: Project[] = [
   {
-    slug: "fieldnote",
-    title: "Fieldnote",
+    slug: "crosscode",
+    title: "CrossCode",
     year: "2025",
-    role: "Design & Engineering",
+    role: "Founder & AI Engineer",
     summary:
-      "A minimal note-taking app built for researchers doing fieldwork offline.",
+      "An AI HTS classification platform for licensed customs brokers.",
     description:
-      "Fieldnote strips note-taking down to what researchers actually need in the field: fast capture, reliable offline sync, and a structure that mirrors how observations actually get organized — by site, by session, by tag. Built the local-first sync engine and the entire interface, from the capture flow down to the typographic system used for transcripts.",
-    tags: ["Next.js", "SQLite", "Offline-first", "Product design"],
-    links: [{ label: "Case study", url: "#" }],
+      "CrossCode maps free-text product descriptions to 10-digit HTS codes in under 3 seconds, compressing 10–15 minute manual lookups into a single query. Built the RAG pipeline over the full Harmonized Tariff Schedule (19,000+ codes) using pgvector embeddings and constrained decoding to suppress hallucinated codes, with an eval harness graded against broker ground truth. Every broker correction is re-indexed into the retrieval layer, so accuracy compounds with usage. Running paid pilots with SF/Bay Area brokerages, owning product, sales, and infrastructure end-to-end.",
+    tags: ["Python", "FastAPI", "RAG", "pgvector", "Next.js"],
+    links: [],
     featured: true,
   },
   {
-    slug: "meridian",
-    title: "Meridian",
-    year: "2024",
-    role: "Full-stack Engineer",
+    slug: "look-agent",
+    title: "Production AI Agent",
+    year: "2025",
+    role: "AI Engineer Intern, LOOK",
     summary:
-      "A scheduling tool for distributed teams that actually accounts for time zones.",
+      "The first AI capability shipped into LOOK's production MVP.",
     description:
-      "Most scheduling tools treat time zones as an afterthought. Meridian puts them at the center — visualizing overlap windows across a team before a single meeting gets booked. Led the backend architecture for calendar sync across Google/Outlook and designed the timeline visualization that became the product's signature view.",
-    tags: ["TypeScript", "Node.js", "PostgreSQL", "Calendar APIs"],
-    links: [
-      { label: "Case study", url: "#" },
-      { label: "Live site", url: "#" },
-    ],
+      "Independently architected and shipped a multi-step AI agent into LOOK's production MVP — the integration pattern the team extended for every downstream feature. Designed the agent's tool-use schema, prompt chain, and fallback logic, integrating third-party tooling with custom orchestration so the agent could autonomously complete core user tasks without human intervention. Owned end-to-end delivery: prompt engineering, observability, and iterative eval cycles. The system was formally designated proprietary IP by the company.",
+    tags: ["Agent orchestration", "Prompt engineering", "Eval harnesses"],
+    links: [],
     featured: true,
   },
   {
-    slug: "constellation",
-    title: "Constellation",
+    slug: "signal",
+    title: "Signal",
     year: "2024",
-    role: "Design Engineer",
-    summary: "An internal design system used across a nine-product portfolio.",
-    description:
-      "Built a token-based design system from scratch to unify nine internal products that had drifted into visual inconsistency over three years. Focused on making the system easy to adopt incrementally rather than requiring a big-bang migration — most teams switched over within a single sprint.",
-    tags: ["Design systems", "React", "Storybook", "Figma"],
-    links: [{ label: "Case study", url: "#" }],
-    featured: true,
-  },
-  {
-    slug: "loom-cli",
-    title: "loom",
-    year: "2023",
     role: "Creator",
-    summary:
-      "An open-source CLI for weaving markdown notes into a static knowledge base.",
+    summary: "An agentic VC intelligence pipeline.",
     description:
-      "A side project born out of frustration with heavier note-taking tools. loom takes a folder of markdown files and generates a fast, searchable static site with backlinks — no database, no server. Small enough to read in an afternoon, opinionated enough to be useful immediately.",
-    tags: ["Rust", "CLI", "Open source"],
-    links: [{ label: "GitHub", url: "#" }],
-    featured: false,
+      "An autonomous research agent that scrapes, deduplicates, and entity-extracts startup news across TechCrunch and peer sources — compressing hours of analyst sourcing into a 5-minute morning briefing. A modular Python ingestion pipeline uses spaCy for NER and company resolution over unstructured text, with production-grade error handling and retry logic.",
+    tags: ["Python", "spaCy", "NER", "Automation"],
+    links: [{ label: "GitHub", url: "https://github.com/LaxRaj/Signal" }],
+    featured: true,
   },
   {
-    slug: "harbor",
-    title: "Harbor",
-    year: "2023",
-    role: "Frontend Engineer",
-    summary: "A lightweight expense tracker for small teams and freelancers.",
+    slug: "atlas",
+    title: "Atlas",
+    year: "2024",
+    role: "Creator",
+    summary: "A quantitative personal finance engine.",
     description:
-      "Redesigned and rebuilt the frontend for a small expense-tracking product, cutting time-to-first-entry from a multi-step wizard down to a single input. Focused heavily on making the numbers feel legible — tabular figures, consistent alignment, and a color system that only uses color where it's meaningful.",
-    tags: ["React", "Tailwind", "Data visualization"],
-    links: [{ label: "Case study", url: "#" }],
+      "A Python engine applying Modern Portfolio Theory and tax-loss harvesting under IRS wash-sale constraints — turning quantitative finance techniques usually locked behind institutional tooling into something a single investor can run themselves.",
+    tags: ["Python", "Quant finance", "Portfolio theory"],
+    links: [
+      { label: "GitHub", url: "https://github.com/LaxRaj/project-atlas" },
+    ],
     featured: false,
   },
 ];

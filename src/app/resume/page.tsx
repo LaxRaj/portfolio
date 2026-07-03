@@ -72,7 +72,7 @@ export default function ResumePage() {
               className="grid gap-1 sm:grid-cols-[140px_1fr]"
             >
               <p className="text-sm text-muted">
-                {entry.start} — {entry.end}
+                {entry.start ? `${entry.start} — ${entry.end}` : entry.end}
               </p>
               <div>
                 <h3 className="font-display text-xl">{entry.institution}</h3>
@@ -83,7 +83,7 @@ export default function ResumePage() {
         </ul>
       </section>
 
-      <section>
+      <section className="mb-14">
         <h2 className="mb-6 text-sm tracking-[0.14em] uppercase text-accent font-medium">
           Skills
         </h2>
@@ -95,6 +95,19 @@ export default function ResumePage() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section>
+        <h2 className="mb-6 text-sm tracking-[0.14em] uppercase text-accent font-medium">
+          Leadership
+        </h2>
+        <ul className="space-y-2 text-muted">
+          {resume.leadership.map((item) => (
+            <li key={item} className="pl-4 relative before:absolute before:left-0 before:content-['—']">
+              {item}
+            </li>
+          ))}
+        </ul>
       </section>
     </div>
   );

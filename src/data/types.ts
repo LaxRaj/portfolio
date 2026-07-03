@@ -59,5 +59,6 @@ export interface ResumeData {
   experience: ExperienceEntry[];
   education: EducationEntry[];
   skills: SkillGroup[];
+  leadership: string[];
   pdfUrl: string;
 }

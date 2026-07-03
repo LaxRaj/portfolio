@@ -10,6 +10,12 @@
   --surface: #f3f1ec;
   --accent: #b5542d;
   --accent-foreground: #fbfaf8;
+
+  /* type scale — enormous display, small everything else */
+  --type-hero: clamp(3.5rem, 12vw, 11rem);
+  --type-hero-sub: clamp(1.75rem, 5vw, 4rem);
+  --type-display: clamp(2.25rem, 6vw, 5rem);
+  --type-label: 0.6875rem;
 }
 
 .dark {
@@ -31,8 +37,9 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
 
-  --font-display: var(--font-fraunces);
-  --font-sans: var(--font-inter);
+  --font-display: var(--font-archivo);
+  --font-sans: var(--font-hanken);
+  --font-mono: var(--font-jetbrains-mono);
 
   --animate-fade-in: fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 
@@ -61,6 +68,35 @@ body {
 ::selection {
   background: var(--accent);
   color: var(--accent-foreground);
+}
+
+/* the A24 wayfinding trick — tiny tracked uppercase, used for eyebrows,
+   nav links, and metadata instead of icons or badges */
+.label {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: var(--type-label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* hierarchical hero name — first name carries the weight, surname sits
+   quieter beneath it. Scale contrast is the drama, not decoration. */
+.hero-name-primary {
+  font-family: var(--font-display);
+  font-size: var(--type-hero);
+  font-weight: 800;
+  font-stretch: 120%;
+  letter-spacing: -0.03em;
+  line-height: 0.88;
+}
+
+.hero-name-secondary {
+  font-family: var(--font-display);
+  font-size: var(--type-hero-sub);
+  font-weight: 400;
+  font-stretch: 100%;
+  letter-spacing: -0.01em;
+  line-height: 1;
 }
 
 /* Subtle grain overlay — a fixed, low-opacity noise layer for a tactile,

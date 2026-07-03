@@ -5,56 +5,46 @@ import { profile } from "@/data/profile";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
+const [firstName, ...rest] = profile.name.split(" ");
+const lastName = rest.join(" ");
+
 export function Hero() {
   return (
-    <section className="mx-auto flex min-h-[85vh] max-w-5xl flex-col justify-center px-6 py-24">
-      <motion.p
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: EASE }}
-        className="mb-6 text-sm tracking-[0.14em] uppercase text-muted"
-      >
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, ease: EASE }}
+      className="mx-auto flex min-h-[90vh] max-w-6xl flex-col justify-center px-6 py-24"
+    >
+      <p className="label mb-6 text-muted">
         {profile.title} · {profile.location}
-      </motion.p>
+      </p>
 
-      <motion.h1
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.1, ease: EASE }}
-        className="font-display text-[clamp(2.5rem,7vw,5rem)] leading-[1.05] text-balance"
-      >
-        {profile.name}.{" "}
-        <span className="text-muted">{profile.tagline}</span>
-      </motion.h1>
+      <h1 className="text-foreground">
+        <span className="hero-name-primary block">{firstName}</span>
+        <span className="hero-name-secondary block mt-2 text-muted">
+          {lastName}
+        </span>
+      </h1>
 
-      <motion.p
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.2, ease: EASE }}
-        className="mt-8 max-w-xl text-lg text-muted"
-      >
+      <p className="mt-10 max-w-xl text-lg text-muted">
         {profile.shortBio}
-      </motion.p>
+      </p>
 
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.3, ease: EASE }}
-        className="mt-10 flex flex-wrap items-center gap-4"
-      >
+      <div className="mt-10 flex flex-wrap items-center gap-4">
         <a
           href="#projects"
-          className="rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-transform hover:scale-[1.03]"
+          className="border border-foreground px-6 py-3 text-sm font-medium transition-colors hover:bg-foreground hover:text-background"
         >
           View work
         </a>
         <a
           href="#contact"
-          className="rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:border-foreground"
+          className="border border-border px-6 py-3 text-sm font-medium transition-colors hover:border-foreground"
         >
           Get in touch
         </a>
-      </motion.div>
-    </section>
+      </div>
+    </motion.section>
   );
 }

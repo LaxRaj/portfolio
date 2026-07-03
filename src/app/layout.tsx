@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Archivo, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import { Nav } from "@/components/ui/Nav";
 import { Footer } from "@/components/sections/Footer";
@@ -7,14 +7,19 @@ import { Grain } from "@/components/ui/Grain";
 import { profile } from "@/data/profile";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
-  axes: ["opsz", "SOFT", "WONK"],
+  axes: ["wdth"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const hanken = Hanken_Grotesk({
+  variable: "--font-hanken",
+  subsets: ["latin"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
 });
 
@@ -50,7 +55,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
+      className={`${archivo.variable} ${hanken.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <Script

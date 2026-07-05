@@ -12,9 +12,9 @@ export default function Home() {
       </div>
 
       <h1 className="hero-name mt-auto sm:mt-0 sm:absolute sm:bottom-10 sm:left-10 sm:max-w-[70%]">
-        <span className="block">{first}</span>
-        <span className="block">{middle}</span>
-        <span className="accent block">{last}</span>
+        <span className="hero-line hero-line--primary block">{first}</span>
+        <span className="hero-line hero-line--secondary block">{middle}</span>
+        <span className="hero-line hero-line--primary accent block">{last}</span>
       </h1>
     </main>
   );

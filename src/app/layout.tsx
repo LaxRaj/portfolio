@@ -1,16 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Hanken_Grotesk, Space_Mono } from "next/font/google";
 import { profile } from "@/data/profile";
+import { CustomCursor } from "@/components/custom-cursor";
+import { GrainOverlay } from "@/components/grain-overlay";
+import { Navbar } from "@/components/navbar";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  axes: ["opsz", "SOFT", "WONK"],
+});
+
+const hanken = Hanken_Grotesk({
+  variable: "--font-hanken",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const spaceMono = Space_Mono({
+  variable: "--font-space-mono",
   subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -34,10 +44,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${hanken.variable} ${spaceMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-background text-foreground">
-        {children}
+      <body className="min-h-full">
+        <GrainOverlay />
+        <CustomCursor />
+        <div className="site-frame">
+          <Navbar />
+          <div className="frame-content">{children}</div>
+        </div>
       </body>
     </html>
   );

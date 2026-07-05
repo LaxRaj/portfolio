@@ -15,6 +15,12 @@ export function About() {
             {profile.bio.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
+            <a
+              href="/resume"
+              className="inline-block text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground"
+            >
+              Read my full resume →
+            </a>
           </div>
         </Reveal>
 

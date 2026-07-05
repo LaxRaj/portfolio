@@ -6,11 +6,11 @@ import { ProjectCard } from "./ProjectCard";
 export function Projects() {
   return (
     <section
-      id="projects"
+      id="work"
       className="mx-auto max-w-5xl px-6 py-24 md:py-32 border-t border-border"
     >
       <Reveal>
-        <SectionHeading eyebrow="Selected work" title="Things I've built" />
+        <SectionHeading eyebrow="Work" title="Things I've built" />
       </Reveal>
 
       <div className="grid gap-6 sm:grid-cols-2">

@@ -4,12 +4,12 @@ import { Reveal } from "@/components/ui/Reveal";
 export function Contact() {
   return (
     <section
-      id="contact"
+      id="coffee"
       className="mx-auto max-w-5xl px-6 py-24 md:py-32 border-t border-border"
     >
       <Reveal>
         <p className="mb-3 text-sm tracking-[0.14em] uppercase text-accent font-medium">
-          Contact
+          Coffee?
         </p>
         <p className="mb-8 max-w-xl text-muted">{profile.availability}</p>
         <a

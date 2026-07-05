@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Libre_Franklin, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import { Nav } from "@/components/ui/Nav";
 import { Footer } from "@/components/sections/Footer";
@@ -7,10 +7,9 @@ import { Grain } from "@/components/ui/Grain";
 import { profile } from "@/data/profile";
 import "./globals.css";
 
-const archivo = Archivo({
-  variable: "--font-archivo",
+const franklin = Libre_Franklin({
+  variable: "--font-franklin",
   subsets: ["latin"],
-  axes: ["wdth"],
 });
 
 const hanken = Hanken_Grotesk({
@@ -55,7 +54,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${archivo.variable} ${hanken.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${franklin.variable} ${hanken.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <Script

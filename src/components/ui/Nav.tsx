@@ -6,10 +6,10 @@ import { profile } from "@/data/profile";
 import { cn } from "@/lib/utils";
 
 const links = [
+  { href: "#life", label: "Life" },
   { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#resume", label: "Resume" },
-  { href: "#contact", label: "Contact" },
+  { href: "#work", label: "Work" },
+  { href: "#coffee", label: "Coffee?" },
 ];
 
 export function Nav() {

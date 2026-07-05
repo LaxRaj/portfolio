@@ -3,6 +3,11 @@ export interface SocialLink {
   url: string;
 }
 
+export interface Attribute {
+  label: string;
+  colorVar: string;
+}
+
 export interface Profile {
   name: string;
   title: string;
@@ -12,8 +17,10 @@ export interface Profile {
   availability: string;
   shortBio: string;
   bio: string[];
+  life: string[];
   socials: SocialLink[];
   skills: string[];
+  attributes: Attribute[];
 }
 
 export interface ProjectLink {

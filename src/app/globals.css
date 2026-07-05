@@ -48,6 +48,7 @@
 html,
 body {
   height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -55,7 +56,6 @@ body {
   color: var(--ink);
   font-family: var(--font-text), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -87,12 +87,13 @@ body {
 
 .site-frame {
   position: relative;
-  min-height: 100dvh;
+  height: calc(100dvh - (2 * var(--frame-gutter)));
   display: flex;
   flex-direction: column;
   margin: var(--frame-gutter);
   border: 1.5px solid var(--ink);
   border-radius: 2px;
+  overflow: hidden;
 }
 
 .site-frame::before,
@@ -120,6 +121,7 @@ body {
   position: relative;
   flex: 1;
   min-height: 0;
+  overflow-y: auto;
 }
 
 /* ---------------------------------- */
@@ -243,25 +245,9 @@ body {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .hobbyist-zone:hover .hobbyist-tile {
+  .hobbyist-tile:hover {
     opacity: 1;
     transform: translateX(0);
-  }
-
-  .hobbyist-tile:nth-child(1) {
-    transition-delay: 0ms;
-  }
-  .hobbyist-tile:nth-child(2) {
-    transition-delay: 40ms;
-  }
-  .hobbyist-tile:nth-child(3) {
-    transition-delay: 80ms;
-  }
-  .hobbyist-tile:nth-child(4) {
-    transition-delay: 120ms;
-  }
-  .hobbyist-tile:nth-child(5) {
-    transition-delay: 160ms;
   }
 }
 
